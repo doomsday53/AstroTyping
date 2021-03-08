@@ -8,12 +8,13 @@ public class ScoreLogic : MonoBehaviour
     public int correctKeys;
     public int keyStreak;
     public int totalGeneric;
-    public float totalWords;
+    public float totalcharacters;
     public float wordsPerMin;
 
     public UnityEngine.UI.Text genScore;
     public UnityEngine.UI.Text curMistakes;
     public UnityEngine.UI.Text curStreak;
+    public UnityEngine.UI.Text wpmScore;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +68,8 @@ public class ScoreLogic : MonoBehaviour
 
     public void GenerateWordsPerMin()
     {
-        wordsPerMin = totalWords / Time.timeSinceLevelLoad;
+        wordsPerMin = 0.2f * totalcharacters / Time.time;
+        wpmScore.text = wordsPerMin.ToString("0.####");
+
     }
 }

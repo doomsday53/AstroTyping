@@ -19,6 +19,10 @@ public class TypingLogic : MonoBehaviour
     void Start()
     {
         LoadLines("attack.txt");
+        for (int i = 0; i < displayString.Length; i++)
+        {
+            score.totalcharacters += 1;
+        }
     }
     public void LoadLines(string stringtxt)
     {
@@ -50,7 +54,7 @@ public class TypingLogic : MonoBehaviour
             score.AddCorrectKeys();
             if (currentCharacter >= enemyLines[currentLine].Length)
             {
-                score.totalWords += 1;
+                //score.totalcharacters += 1;
                 currentCharacter = 0;
                 currentLine += 1;
                 //HACK HACK HACK
