@@ -8,7 +8,7 @@ public class TypingLogic : MonoBehaviour
     public int currentLine = 0;
     public int currentCharacter = 0;
     public int damage;
-
+    public int enemiesDefeated;
     public string displayString = "NOT SET";
 
     public UnityEngine.UI.Text txtEnemyDisplay;
@@ -18,11 +18,12 @@ public class TypingLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadLines("attack.txt");
+        LoadLines("pangrams.txt");
         for (int i = 0; i < displayString.Length; i++)
         {
-            score.totalcharacters += 1;
+            score.totalCharacters += 1;
         }
+        enemiesDefeated = 0;
     }
     public void LoadLines(string stringtxt)
     {
@@ -45,7 +46,6 @@ public class TypingLogic : MonoBehaviour
     {
         UnityEngine.InputSystem.Keyboard.current.onTextInput -= DoKeyPress;
     }
-
     private void DoKeyPress(char curKey)
     {
         if (curKey == enemyLines[currentLine][currentCharacter])
@@ -54,24 +54,25 @@ public class TypingLogic : MonoBehaviour
             score.AddCorrectKeys();
             if (currentCharacter >= enemyLines[currentLine].Length)
             {
-                //score.totalcharacters += 1;
+                score.totalCharacters += 1;
                 currentCharacter = 0;
                 currentLine += 1;
-                //HACK HACK HACK
-                //For now just restarting the spell,
-                //this should actually do
-                //something in the game
                 enemyLogic.TakeDamage(damage);
                 if (currentLine >= enemyLines.Count)
                 {
-                    score.GenerateTotalGeneric();
-                    score.GenerateWordsPerMin();
+                    score.GenerateResults();
+                    //enemiesDefeated += 1;
+                    //if(enemiesDefeated == 3)
+                    //{
+                    //    score.GenerateTotalGeneric();
+                    //    score.GenerateWordsPerMin();
+                    //}
                 }
                 currentLine = currentLine % enemyLines.Count;
                 displayString = enemyLines[currentLine];
             }
             string leftSide = enemyLines[currentLine].Substring(0, currentCharacter);
-            string rightSide = enemyLines[currentLine].Substring(currentCharacter, enemyLines[currentLine].Length - currentCharacter); ;
+            string rightSide = enemyLines[currentLine].Substring(currentCharacter, enemyLines[currentLine].Length - currentCharacter);
             displayString = string.Format("<color=green>{0}</color>{1}", leftSide, rightSide);
             txtEnemyDisplay.text = displayString;
         }
@@ -87,4 +88,10 @@ public class TypingLogic : MonoBehaviour
     {
 
     }
+
+    public IEnumerator WaitForLoad()
+    {
+        yield return new WaitForSeconds(1);
+    }
+
 }

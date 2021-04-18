@@ -36,7 +36,7 @@ public class GameLogic : MonoBehaviour
     {
         //This means nothing, it is just proving that the data can be changed, saved, and loaded.
         //if (Input.GetKeyDown(KeyCode.Space)) saveData.sampleData += 1;
-        if (UnityEngine.InputSystem.Keyboard.current.spaceKey.isPressed) saveData.sampleData += 1;
+        //if (UnityEngine.InputSystem.Keyboard.current.spaceKey.isPressed) saveData.sampleData += 1;
     }
 
     private void OnDestroy()

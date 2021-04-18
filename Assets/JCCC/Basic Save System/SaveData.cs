@@ -10,10 +10,10 @@ using UnityEngine;
 public class SaveData
 {
     //These are just sample variables.  They do not matter and can be removed/changed/added to
-    public int sampleData = 0;
-    public int clearedLevel = 1;
-    public int storedXP = 0;
-    public string someString = "meep";
+    public float wpm;
+    public int mistakes;
+    public int maxStreak;
+    public int totalGeneric;
     
     //This is NOT a sample variable.  You can use this flag to determine if data should be autosaved when quitting.
     public bool saveOnDestroy = true;
