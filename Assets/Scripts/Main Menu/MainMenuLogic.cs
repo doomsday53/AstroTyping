@@ -88,7 +88,7 @@ public class MainMenuLogic : MonoBehaviour
     public void SetResults()
     {
         genScore.text = saveDataObj.saveData.totalGeneric.ToString();
-        wpmScore.text = saveDataObj.saveData.wpm.ToString("0.####");
+        wpmScore.text = saveDataObj.saveData.wpm.ToString("0.##");
         curStreak.text = saveDataObj.saveData.maxStreak.ToString();
         curMistakes.text = saveDataObj.saveData.mistakes.ToString();
     }

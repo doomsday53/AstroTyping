@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy1Logic : MonoBehaviour
 {
@@ -10,16 +11,22 @@ public class Enemy1Logic : MonoBehaviour
     public TypingLogic typingLogic;
     public List<Sprite> sprites;
     private int i = 0;
-    private Color[] colors;
-    private Color randColor;
+    // private Color[] colors;
+    //private Color randColor;
+    public Text healthText;
+    public Text maxHealthText;
+    public GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
     {
         health = typingLogic.enemyLines.Count;
-        healthBar.SetMaxHealth(maxHealth);
+        maxHealth = health;
+        healthText.text = health.ToString();
+        maxHealthText.text = maxHealth.ToString();
+        //healthBar.SetMaxHealth(maxHealth);
         typingLogic = FindObjectOfType<TypingLogic>();
-        GetComponentInChildren<SpriteRenderer>().sprite = sprites[0]; 
+        GetComponentInChildren<SpriteRenderer>().sprite = sprites[0];
     }
 
     // Update is called once per frame
@@ -29,6 +36,7 @@ public class Enemy1Logic : MonoBehaviour
         {
             //print(Time.timeSinceLevelLoad.ToString());
             gameObject.SetActive(false);
+            ObjectPool.Spawn(explosion, transform.position, transform.rotation);
             //StartCoroutine(WaitForRespawn());
             
         }
@@ -37,59 +45,60 @@ public class Enemy1Logic : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        healthBar.SetHealth(health);
+        healthText.text = health.ToString();
+        //healthBar.SetHealth(health);
         if (typingLogic.currentLine % 2 == 0)
         {
             i += 1;
-            //float colorR = Random.Range(1, 255);
-            //float colorGn = Random.Range(1, 255);
-            //float colorB = Random.Range(1, 255);
 
 
-            
-            if (i > 3)
+
+
+            if (i > 7)
             {
                 i = 0;
                 gameObject.SetActive(false);
                 GetComponentInChildren<SpriteRenderer>().sprite = sprites[i];
-                RandomColor();
-                GetComponentInChildren<SpriteRenderer>().color = randColor;
+                ObjectPool.Spawn(explosion, transform.position, transform.rotation);
+                //RandomColor();
+                //GetComponentInChildren<SpriteRenderer>().color = randColor;
                 gameObject.SetActive(true);
             }
             else
             {
                 gameObject.SetActive(false);
                 GetComponentInChildren<SpriteRenderer>().sprite = sprites[i];
-                RandomColor();
-                GetComponentInChildren<SpriteRenderer>().color = randColor;
+                ObjectPool.Spawn(explosion, transform.position, transform.rotation);
+                //RandomColor();
+                //GetComponentInChildren<SpriteRenderer>().color = randColor;
                 gameObject.SetActive(true);
             }
-            
+
         }
 
     }
 
-    void RandomColor()
-    {
-        colors = new[]
-        {
-            Color.blue,
-            Color.magenta,
-            Color.red,
-            Color.green,
-            Color.yellow,
-            Color.cyan,
-            Color.grey,
-            Color.white,
-            Color.magenta, 
-            Color.black
-        };
+    //void RandomColor()
+    //{
+    //    colors = new[]
+    //    {
+    //        Color.blue,
+    //        Color.magenta,
+    //        Color.red,
+    //        Color.green,
+    //        Color.yellow,
+    //        Color.cyan,
+    //        Color.grey,
+    //        Color.white,
+    //        Color.magenta, 
+    //        Color.black
+    //    };
 
-        int rand = Random.Range(0, colors.Length);
-        randColor = colors[rand];
+    //    int rand = Random.Range(0, colors.Length);
+    //    randColor = colors[rand];
 
 
-    }
+    //}
 
     //public IEnumerator WaitForRespawn()
     //{

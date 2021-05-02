@@ -10,10 +10,10 @@ public class TypingLogic : MonoBehaviour
     public int damage;
     public int enemiesDefeated;
     public string displayString = "NOT SET";
-
     public UnityEngine.UI.Text txtEnemyDisplay;
     public Enemy1Logic enemyLogic;
     public ScoreLogic score;
+    public PlayerLogic player;
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +78,7 @@ public class TypingLogic : MonoBehaviour
         }
         else
         {
+            player.TakeDamage(damage);
             score.AddMistake();
             score.ResetStreak();
         }

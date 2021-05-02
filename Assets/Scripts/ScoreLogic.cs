@@ -15,11 +15,16 @@ public class ScoreLogic : MonoBehaviour
     public float wordsPerMin;
     //public bool firstGame;
 
-    public Text genScore;
-    public Text curMistakes;
-    public Text curStreak;
-    public Text wpmScore;
+    public Text newGeneric;
+    public Text newMistakes;
+    public Text newStreak;
+    public Text newWordsPerMinute;
+    public Text savedGeneric;
+    public Text savedMistakes;
+    public Text savedStreak;
+    public Text savedWordsPerMinute;
     public Canvas results;
+    public Canvas gameOver;
     [SerializeField] private SaveDataManager saveDataObj;
     // Start is called before the first frame update
     void Awake()
@@ -47,7 +52,9 @@ public class ScoreLogic : MonoBehaviour
         //    firstGame = false;
         //}
         results.gameObject.SetActive(false);
+        gameOver.gameObject.SetActive(false);
         //saveDataObj = FindObjectOfType<SaveDataManager>().gameObject;
+        
     }
 
     // Update is called once per frame
@@ -86,8 +93,18 @@ public class ScoreLogic : MonoBehaviour
         }
     }
 
+    public void ShowGameOver()
+    {
+        gameOver.gameObject.SetActive(true);
+    }
+
     public void GenerateResults()
     {
+        //Load Old Scores
+        savedGeneric.text = saveDataObj.saveData.totalGeneric.ToString();
+        savedMistakes.text = saveDataObj.saveData.mistakes.ToString();
+        savedStreak.text = saveDataObj.saveData.maxStreak.ToString();
+        savedWordsPerMinute.text = saveDataObj.saveData.wpm.ToString("0.##");
         //Generate Total Generic Score
         if (mistakesMade <= 0)
         {
@@ -97,17 +114,17 @@ public class ScoreLogic : MonoBehaviour
         {
             totalGeneric = (correctKeys / mistakesMade) * 100;
         }
-        genScore.text = totalGeneric.ToString();
+        newGeneric.text = totalGeneric.ToString();
 
         //Generate Words Per Minute
-        wordsPerMin = 0.2f * totalCharacters / Time.time;
-        wpmScore.text = wordsPerMin.ToString("0.####");
+        wordsPerMin = 0.2f * totalCharacters / (Time.timeSinceLevelLoad / 60);
+        newWordsPerMinute.text = wordsPerMin.ToString("0.##");
 
         //Generate Max Streak
-        curStreak.text = maxStreak.ToString();
+        newStreak.text = maxStreak.ToString();
 
         //Generate Mistakes
-        curMistakes.text = mistakesMade.ToString();
+        newMistakes.text = mistakesMade.ToString();
 
         //Enable Results Canvas
         results.gameObject.SetActive(true);
@@ -170,4 +187,13 @@ public class ScoreLogic : MonoBehaviour
     //        saveData.SaveToDisk();
     //    }
     //}
+    public void GameOverRestart()
+    {
+        SceneManager.LoadScene("Level 1 Test");
+    }
+
+    public void GameOverMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
