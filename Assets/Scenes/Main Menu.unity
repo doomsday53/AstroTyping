@@ -154,7 +154,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1788659970}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -255,17 +255,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33223135}
   m_CullTransparentMesh: 1
---- !u!114 &170809294 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7705847699287547625, guid: e5f87fe1153dbd849b2a66fc2ca03596, type: 3}
-  m_PrefabInstance: {fileID: 7705847698710267647}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a6982780612bf449d54c2d348dc1de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &251851243
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +360,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1788659970}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -503,7 +492,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1788659970}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -638,7 +627,7 @@ RectTransform:
   - {fileID: 794121036}
   - {fileID: 1718428278}
   m_Father: {fileID: 1788659970}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -737,7 +726,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1788659970}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -869,7 +858,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1788659970}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1029,7 +1018,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e1e813f02a4fb054ba348f6be3ab2939, type: 3}
-    m_FontSize: 35
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1040,26 +1029,42 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Credits Background: "https://www.vecteezy.com/free-vector/ornament"
+  m_Text: 'Asteroid Buttons: http://clipart-library.com/clipart/275549.htm
 
 
-    Asteroid
-    Buttons: "http://clipart-library.com/clipart/275549.htm"
+    Astro
+    Font: https://www.dafont.com/astro.font
+
+
+    Credits Background: https://www.vecteezy.com/free-vector/ornament
+
+
+    Enemy
+    Sprites: https://opengameart.org/content/set-faction5-spaceships
+
+
+    Enemy
+    Sprites 2: https://opengameart.org/content/set-faction10-spaceships
+
+
+    Explosion
+    Effect: https://opengameart.org/content/warp-effect-2
 
 
     Menu BackGround:
-    "https://www.gettyimages.com/detail/illustration/blue-planet-royalty-free-illustration/1010496666?uiloc=thumbnail_similar_images_adp"
+    https://www.istockphoto.com/vector/planets-and-asteroids-gm511877560-86871373
 
 
     Nulshock
-    Font: "https://www.dafont.com/nulshock.font?l[]=10&l[]=1&l[]=6"
+    Font: https://www.dafont.com/nulshock.font?l[]=10&l[]=1&l[]=6
 
 
-    Astro Font:
-    "https://www.dafont.com/astro.font"
+    Player Sprite:
+    https://opengameart.org/content/set-faction8-spaceships
 
 
-    Results Screen: "https://www.onlinewebfonts.com/icon/129439"'
+    Results Screen:
+    https://www.onlinewebfonts.com/icon/129439'
 --- !u!222 &794121038
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1273,7 +1278,7 @@ MonoBehaviour:
   options_Menu: {fileID: 1243516036}
   results_Screen: {fileID: 6018138837171295598}
   menuAudio: {fileID: 1161457002}
-  saveDataObj: {fileID: 170809294}
+  saveDataObj: {fileID: 0}
   genScore: {fileID: 6018138838135558149}
   curMistakes: {fileID: 6018138837764817347}
   curStreak: {fileID: 6018138838578767787}
@@ -1489,7 +1494,7 @@ RectTransform:
   m_Children:
   - {fileID: 1004600842}
   m_Father: {fileID: 1788659970}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1851,7 +1856,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1788659970}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2119,6 +2124,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 6018138837171295602}
   - {fileID: 1667229385}
   - {fileID: 514833938}
   - {fileID: 305372599}
@@ -2242,7 +2248,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1788659970}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2409,13 +2415,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6018138837171295598}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 6018138838150920402}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1788659970}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3058,6 +3064,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1926854486411453084, guid: e5f87fe1153dbd849b2a66fc2ca03596, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7705847699287547624, guid: e5f87fe1153dbd849b2a66fc2ca03596, type: 3}
       propertyPath: m_RootOrder
       value: 4
