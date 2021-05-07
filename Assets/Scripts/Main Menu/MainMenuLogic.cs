@@ -21,7 +21,7 @@ public class MainMenuLogic : MonoBehaviour
     {
         CloseCredits();
         CloseOptions();
-        SetResults();
+        //SetResults();
         CloseResults();
 
         saveDataObj = FindObjectOfType<SaveDataManager>();
@@ -77,6 +77,7 @@ public class MainMenuLogic : MonoBehaviour
     
     public void ShowResults()
     {
+        SetResults();
         results_Screen.SetActive(true);
     }
 

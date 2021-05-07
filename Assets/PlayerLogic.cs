@@ -31,6 +31,7 @@ public class PlayerLogic : MonoBehaviour
             //print(Time.timeSinceLevelLoad.ToString());
             gameObject.SetActive(false);
             ObjectPool.Spawn(explosion, transform.position, transform.rotation);
+            score.ShowGameOver();
             //StartCoroutine(WaitForRespawn());
 
         }
